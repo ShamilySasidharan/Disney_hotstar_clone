@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { addPopularPlayingMovies } from "../utils/movieSlice"
 import { useEffect } from "react"
 import { API_OPTIONS } from "../utils/constants"
 
 const usePopularMovies = ()=>{
     const dispatch = useDispatch()
-
+    const popularMovies  = useSelector((store)=>store.movies.popularMovies)
     // FETCHING THE MOVIES FROM TMDB AND UPDATE STORE TAKE CARE HERE 
     const getPopularPlayingMovies = async()=>{
         const data = await fetch('https://api.themoviedb.org/3/movie/popular?page=1', API_OPTIONS)
@@ -16,6 +16,7 @@ const usePopularMovies = ()=>{
     }
 
     useEffect(()=>{
+        if(!popularMovies)
         getPopularPlayingMovies()
     },[])
 }

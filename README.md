@@ -13,33 +13,35 @@
 - fetched TMDB movies and created a movieSlice and store inside the redux store
 
 
-# Planing
+# Building
 - Building the routing inside the `app.js` 
     - installed: npm i -D react-router-dom 
     - provide the appRouter to the RouterProvider 
-- created the header page 
-- created the landing login page
-- created the login form when use click the login btn changes to signup (one form with toggle option)
-- validation for the form 
+- creation of the header page 
+- creation of the landing login page
+- Creation of toggle feature: for signup and login
+- Creation of  validation form 
 - firebase setup and auth
 - enable authentication in firebase app 
     build > authentication > sign-in methods  if you want another provider there is new provider option is there
 - TMDB api for movies
-    # browse page creation
+
+    # Browse page creation
     - browse page have two components
     
-    - main conatainer with videoBackground
-      - with videoTitle and other details
-      - made the trailer preview and other details, done some css
-      - create the trailer in movieSlice, made the fetch call and got the trailer, put in store and subscribed to the store to get the trailer
-      - create custom hooks for the trailer and now playing movies
-      - done the css using the trailer
-      - main component is done with styling
-
-    - secondary container
-    - with Movielist and movie card the secondary container will act as a parent and props to the children
-    - created additional movieDetails page 
-    - so when a card is clicked it should take to movie details page 
+    - # main conatainer with videoBackground
+        - with videoTitle and other details
+        - made the trailer preview and other details, done some css
+        - create the trailer in movieSlice, made the fetch call and got the trailer, put in store and subscribed to the store to get the trailer
+        - create custom hooks for the trailer and now playing movies
+        - done the css using the trailer
+        - main component is done with styling
+    - # secondary container
+        - with Movielist and movie card the secondary container will act as a parent and props to the children
+        - created additional movieDetails page 
+        - so when a card is clicked it should take to movie details page 
+    
+    
     # Search page 
     - created a search bar and btn
     - created a select option and add the multilingual selection 
@@ -61,11 +63,6 @@
       
 
 
-
-
-    
-
-
 # Authentication
 - using the firebase authentications
 - follow the steps add the sdk in utils > firebase.js file
@@ -78,13 +75,13 @@
 
 
 # Redux store
-User
+- User
 - created the appStore
 - created the userSlice
 - provide to the appStore
 - provide to the whole store, in app.js we are already using the dispatch function so we are calling the dispatch before providing to the app as a result we need to provide them to the root level that is index.js
 
-Movies
+- Movies
 - created a movie slice
 - provide to the store 
 - confirmed it by checking the redux store

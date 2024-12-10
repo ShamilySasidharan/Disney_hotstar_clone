@@ -1,13 +1,14 @@
 
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch, } from "react-redux";
+import { useDispatch, useSelector, } from "react-redux";
 import { addTrailerOfTheMovie } from "../utils/movieSlice";
 
 const useTrailerOfMovie = (movieID)=>{
    // DISPATCH AN ACTION TO STORE INSIDE THE STORE
   //  console.log(movieID)
    const dispatch = useDispatch()
+   const trailerOfTheMovies  = useSelector((store)=>store.movies.trailer)
 
    // MAKING THE FETCH CALL TO GET ALL THE VIDEOS OF THE MOVIE
     const getAllMovieVideos = async () => {
@@ -39,6 +40,7 @@ const useTrailerOfMovie = (movieID)=>{
  };
  // CALLIING THE FUNCTION INSIDE THE USE EFFECT HOOK SO IT WILL ONLY CALL ONCE
  useEffect(() => {
+  if(trailerOfTheMovies)
    getAllMovieVideos();
  }, []);
 
